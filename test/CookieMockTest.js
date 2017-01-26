@@ -67,21 +67,4 @@ describe('Mock Cookie', () => {
     mock.cookie = foo;
     mock.cookie.should.be.equal(hello);
   });
-  it('getter expires cookies and only return valid cookies', function it(done) {
-    this.timeout(3000);
-
-    const expires = new Date();
-
-    mock.cookie.should.be.equal('');
-
-    expires.setTime(expires.getTime() + 500);
-    const foo = `foo=bar; expires=${expires.toUTCString()}; path=/; domain=127.0.0.1`;
-    mock.cookie = foo;
-    mock.cookie.should.be.equal(foo);
-
-    setTimeout(() => {
-      mock.cookie.should.be.equal('');
-      done();
-    }, 1000);
-  });
 });
