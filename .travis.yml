@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- '6'
+script: npm test
+deploy:
+  provider: npm
+  email: info@entrecode.de
+  api_key:
+    secure: JdINbLn/uYP8rcOz7wle6EibgrkpR+2AKDF6v1kGQQYfN9lpJ14XxTxRr27EMevJhD25i8h5uPpL4TW7WQUDTQWVJrEfbURfwvkMjCHKENIjCknJTtK3sy6fmVNetwpBhG9UNidRua6pnv76HTFbUVKdmOyDkgps4cKdZ3yj8gDCivLmy+uZNJR9+atfdeb7e8pVxLJPTYFQms6eV9DwkMrr5WBV10Mfrawrkcu6jjWCB0wOz5N7Smv++jozntpF3mlX7o2hmGDryNmCepTihYK7An97YZgeqn4vqvrRd9xkwNYtr83EhtRv9PMe8A2XFHJsO8xZksYrih/ZAWth8XeHnNfziqhi2A0p5XV80PhkI8rXvNs7NRX/Zi4Fi6Grx/pBMKOdtY4UdT29l5eu0DFmP3HGGeIKgY1k0X8hJKxu7BqLO2lM4M+tYWmhtHmYOPLRbFpY1Ek5VkST55Qb2m936CmswDYQS1BElY+Tn6l5tiWEcEd2x9iSPoGFJ2ich4rTMSuUayfF/bU/nyL1COoebi9LptHMFIq7+Bg5gnvltaXzUndgDeyPwfqzJWLRy7f21JXR8LxIzeUcriX4G3B4rqhWGJII5cDZHRc4fWecNuv373EQOesJnpOhE4Zj7djmJBcty3yvvAMK5n5gTPr/Xkv7ld3PnBZwI20Rs1A=
+  on:
+    tags: true
+    onBranch: master
+    skip_cleanup: true
