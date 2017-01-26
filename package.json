@@ -1,0 +1,16 @@
+{
+  "name": "ec.cookie-mock",
+  "version": "1.0.0",
+  "description": "Mock implementation for document.cookie.",
+  "main": "./src/CookieMock.js",
+  "author": "Simon Scherzinger <scherzinger@entrecode.de>",
+  "license": "ISC",
+  "repository":"entrecode/ec.cookie-mock",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
