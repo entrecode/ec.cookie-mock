@@ -2,6 +2,8 @@
 
 > Mock implementation for document.cookie. By entrecode.
 
+[![npm version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] 
+
 You can use this for testing cookie handling in your project. Simple add it like shown in the usage example.
 
 
@@ -33,3 +35,8 @@ expires.setTime(expires.getTime() - 120000);
 document.cookie = `cookie=; expires=${past.toUTCString()}; path=/mouth; HttpOnly`;
 console.log(document.cookie); // empty
 ```
+
+[npm-image]: https://badge.fury.io/js/ec.cookie-mock.svg
+[npm-url]: https://www.npmjs.com/package/ec.cookie-mock
+[travis-image]: https://travis-ci.org/entrecode/ec.cookie-mock.svg?branch=master
+[travis-url]: https://travis-ci.org/entrecode/ec.cookie-mock
