@@ -1,6 +1,6 @@
 {
   "name": "ec.cookie-mock",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mock implementation for document.cookie.",
   "main": "./src/CookieMock.js",
   "author": "Simon Scherzinger <scherzinger@entrecode.de>",
