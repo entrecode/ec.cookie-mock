@@ -31,8 +31,7 @@ document.cookie = `cookie=triplechoc; expires=${future.toUTCString()}; path=/mou
 console.log(document.cookie); // cookie=triplechoc; expires=Fri, 26 Jan 2017 12:01:00 GMT; path=/mouth; HttpOnly
 
 // Delete the cookie by setting expires to be in the past
-expires.setTime(expires.getTime() - 120000);
-document.cookie = `cookie=; expires=${past.toUTCString()}; path=/mouth; HttpOnly`;
+document.cookie = `cookie=triplechoc; expires=${past.toUTCString()}; path=/mouth; HttpOnly`;
 console.log(document.cookie); // empty
 ```
 
