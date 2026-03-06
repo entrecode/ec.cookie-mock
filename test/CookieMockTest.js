@@ -67,4 +67,18 @@ describe('Mock Cookie', () => {
     mock.cookie = foo;
     mock.cookie.should.be.equal(hello);
   });
+
+  it('preserves cookie and attribute values containing equal signs', () => {
+    const cookieWithEquals = 'token=abc=123==; path=/a=b; domain=127.0.0.1; secure';
+
+    mock.cookie = cookieWithEquals;
+    mock.cookie.should.be.equal(cookieWithEquals);
+  });
+
+  it('handles reserved attributes case-insensitively', () => {
+    const cookieWithLowercaseFlags = 'foo=bar; expires=Fri, 01 Jan 3017 12:00:00 GMT; path=/; domain=127.0.0.1; httponly; SECURE';
+
+    mock.cookie = cookieWithLowercaseFlags;
+    mock.cookie.should.be.equal(cookieWithLowercaseFlags);
+  });
 });
