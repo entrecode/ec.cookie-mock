@@ -2,7 +2,7 @@
 
 > Mock implementation for document.cookie. By entrecode.
 
-[![npm version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] 
+[![npm version][npm-image]][npm-url] [![Build Status][ci-image]][ci-url] 
 
 You can use this for testing cookie handling in your project. Simple add it like shown in the usage example.
 
@@ -51,5 +51,5 @@ npm run test:coverage
 
 [npm-image]: https://badge.fury.io/js/ec.cookie-mock.svg
 [npm-url]: https://www.npmjs.com/package/ec.cookie-mock
-[travis-image]: https://travis-ci.org/entrecode/ec.cookie-mock.svg?branch=master
-[travis-url]: https://travis-ci.org/entrecode/ec.cookie-mock
+[ci-image]: https://github.com/entrecode/ec.cookie-mock/actions/workflows/ci.yml/badge.svg
+[ci-url]: https://github.com/entrecode/ec.cookie-mock/actions/workflows/ci.yml
