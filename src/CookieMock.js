@@ -6,8 +6,26 @@ const CookieMock = function CookieMock() {
     'max-age',
     'expires',
     'secure',
-    'HttpOnly',
+    'httponly',
   ];
+
+  function isReserved(key) {
+    return reserved.indexOf(key.toLowerCase()) !== -1;
+  }
+
+  function splitCookieItem(item) {
+    const trimmed = item.trim();
+    const separatorIndex = trimmed.indexOf('=');
+
+    if (separatorIndex === -1) {
+      return [trimmed, undefined];
+    }
+
+    return [
+      trimmed.slice(0, separatorIndex).trim(),
+      trimmed.slice(separatorIndex + 1).trim(),
+    ];
+  }
 
   function name(cookie) {
     return cookie.split('=')[0].trim();
@@ -17,12 +35,12 @@ const CookieMock = function CookieMock() {
     const cookieName = name(cookieString);
     return cookieString.split(';')
     .reduce((obj, item) => {
-      const [k, v] = item.split('=').map(i => i.trim());
-      if (reserved.indexOf(k) === -1) {
+      const [k, v] = splitCookieItem(item);
+      if (!isReserved(k)) {
         obj.name = cookieName;
         obj.value = v;
       } else {
-        obj[k] = v || k;
+        obj[k] = v === undefined ? k : v;
       }
       return obj;
     }, {});
@@ -31,7 +49,7 @@ const CookieMock = function CookieMock() {
   function toString(cookieObject) {
     return Object.keys(cookieObject)
     .reduce((cookieString, k) => {
-      if (reserved.indexOf(k) === -1) {
+      if (!isReserved(k)) {
         return cookieString;
       }
       return `${cookieString}; ${k === cookieObject[k] ? k : `${k}=${cookieObject[k]}`}`;

@@ -5,12 +5,18 @@
   "main": "./src/CookieMock.js",
   "author": "Simon Scherzinger <scherzinger@entrecode.de>",
   "license": "ISC",
-  "repository":"entrecode/ec.cookie-mock",
+  "repository": "entrecode/ec.cookie-mock",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^3.2.0"
+    "c8": "^11.0.0",
+    "mocha": "^11.7.5"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test:coverage": "c8 --reporter=text --reporter=lcov npm test"
+  },
+  "c8": {
+    "exclude": [
+      "test/**"
+    ]
   }
 }
