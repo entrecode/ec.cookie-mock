@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-- '6'
-script: npm test
+- '20'
+script: npm run test:coverage
 deploy:
   provider: npm
   email: info@entrecode.de

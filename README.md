@@ -35,6 +35,20 @@ document.cookie = `cookie=triplechoc; expires=${past.toUTCString()}; path=/mouth
 console.log(document.cookie); // empty
 ```
 
+## Development
+
+Run tests:
+
+```sh
+npm test
+```
+
+Generate a coverage report (text summary + `coverage/lcov.info`):
+
+```sh
+npm run test:coverage
+```
+
 [npm-image]: https://badge.fury.io/js/ec.cookie-mock.svg
 [npm-url]: https://www.npmjs.com/package/ec.cookie-mock
 [travis-image]: https://travis-ci.org/entrecode/ec.cookie-mock.svg?branch=master
